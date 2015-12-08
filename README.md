@@ -3,11 +3,11 @@ Trabalho de ALG-I sobre Arvore Binária de Busca para curso de sistemas de infor
 
  Authors:	 	
  
-				name: Allan Ribeiro da Costa NºUSP 9364819
+				name: Allan Ribeiro da Costa
 				uri: https://github.com/allan074
 				e-mail: <email>
 
-         		name: Marcos Vinicius Volpato NºUSP 9364872
+         		name: Marcos Vinicius Volpato
  				uri: https://github.com/marcosvolpato
 				e-mail: volpatomv@gmail.com
 				
