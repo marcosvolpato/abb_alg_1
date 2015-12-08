@@ -21,5 +21,14 @@ typedef struct{
 	t_galho *raiz;
 }t_arvore;
 
+typedef struct t_f_no{
+	t_galho *galho;
+	struct t_f_no *next;
+}t_f_no;
+
+typedef struct t_fila{
+	struct t_f_no *back, *front;
+}t_fila;
+
 
 #endif

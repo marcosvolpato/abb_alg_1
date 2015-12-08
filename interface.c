@@ -31,5 +31,12 @@ void buscar(t_arvore *arvore, char str[]){
 void rem(t_arvore *arvore){
 	//isso retorna um bool... se tiver que colocar os que são 0(zero) usar isso
 	//ar_search_and_print(arvore, &(arvore)->raiz, str);
-	ar_rem_print(arvore, arvore->raiz);
+	//ar_rem_print(arvore, arvore->raiz);
+	ar_rem_print_nivel_2(arvore, arvore->raiz);
+	/*
+	if(arvore->raiz != NULL){
+		printf("%s ", arvore->raiz->str);
+		buscar(arvore,  arvore->raiz->str);
+		ar_rem_print_nivel(arvore, arvore->raiz);
+	}*/
 }

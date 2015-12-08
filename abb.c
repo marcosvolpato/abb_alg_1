@@ -1,5 +1,6 @@
 #include "abb.h"
 #include <ctype.h>
+#include "fila.h"
 
 /*
 ========================== Funções de strings =============================
@@ -183,7 +184,45 @@ t_galho *ga_init(){
 	galho->FB = 0;
 	return galho;
 }
-
+void ar_rem_print_nivel(t_arvore *arvore, t_galho *galho){ 
+    if (galho == NULL) 
+		return;
+    //printf("\n\n%s\n%d", galho->str, galho->FB); 
+    ///////printf("%s ", galho->str);
+    if(galho->esq != NULL){
+    	printf("%s ", galho->esq->str);
+		buscar(arvore,  galho->esq->str);
+	}
+    if(galho->dir != NULL){
+    	printf("%s ", galho->dir->str);
+		buscar(arvore,  galho->dir->str);
+	}
+    ar_rem_print_nivel(arvore, galho->esq);
+    ar_rem_print_nivel(arvore, galho->dir);
+}
+void ar_rem_print_nivel_2(t_arvore *arvore, t_galho *galho){
+	//joga na fila a raiz
+	//insere os filhos da raiz na fila
+	//imprime a raiz
+	//coloca os filhos do primeiro filho na fila
+	//imprime primeiro filho
+	if (galho == NULL) 
+		return;
+	t_fila *fila = f_init();
+	f_push(fila, galho);
+	while(!f_isEmpty(fila)){
+		t_f_no *f_no = f_pop(fila);
+		if(f_no->galho != NULL){
+			printf("%s ", f_no->galho->str);
+			buscar(arvore,  f_no->galho->str);
+			if(f_no->galho->esq != NULL)
+				f_push(fila, f_no->galho->esq);
+			if(f_no->galho->dir != NULL)
+				f_push(fila, f_no->galho->dir);
+		}
+	}
+	
+}
 
 
 

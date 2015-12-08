@@ -20,5 +20,7 @@ t_galho *ga_init();
 int ga_delete_one(t_arvore **arvore, char str[]);
 int ar_search_and_print(t_arvore *arvore, t_galho **raiz, char str[]);
 void ar_rem_print(t_arvore *arvore, t_galho *galho);
+void ar_rem_print_nivel(t_arvore *arvore, t_galho *galho);
+void ar_rem_print_nivel_2(t_arvore *arvore, t_galho *galho);
 
 #endif
