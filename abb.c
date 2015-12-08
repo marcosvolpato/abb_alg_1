@@ -140,6 +140,40 @@ int ar_search(t_galho **raiz, t_galho **galho, char str[]){
 		return 1;
 	} 
 }
+int ar_search_and_print(t_arvore *arvore, t_galho **raiz, char str[]){
+	if(*raiz == NULL)
+		return 0;
+	else if(vem_antes(str, (*raiz)->str) == 1){
+		int result = ar_search_and_print(arvore, &(*raiz)->esq, str);
+		if(result){
+			printf("%s ", str);
+			buscar(arvore, str);
+		}
+		return result;
+	}
+	else if(vem_antes(str, (*raiz)->str) == 0){
+		int result = ar_search_and_print(arvore, &(*raiz)->dir, str);
+		if(result){
+			printf("%s ", str);
+			buscar(arvore, str);
+		}
+		return result;
+	}
+	else{
+		printf("%s ", str);
+		buscar(arvore, str);
+		return 1;
+	} 
+}
+void ar_rem_print(t_arvore *arvore, t_galho *galho){ 
+    if (galho == NULL) 
+		return;
+    //printf("\n\n%s\n%d", galho->str, galho->FB); 
+    printf("%s ", galho->str);
+	buscar(arvore,  galho->str);
+    ar_rem_print(arvore, galho->esq);
+    ar_rem_print(arvore, galho->dir);
+}
 t_galho *ga_init(){
 	t_galho *galho = (t_galho*)malloc(sizeof(t_galho));
 	galho->dir = NULL;

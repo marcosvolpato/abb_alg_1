@@ -73,13 +73,13 @@ void list_show(t_list *list){
 	int started = 0;
 	while(item_list != NULL){
 		if(started)
-			printf(", ");
+			printf(",");
 		else
 			started = 1;
 		printf("%d",item_list->page);
 			
 		item_list = item_list->next;
-	}
+	}	
 	printf("\n");
 }
 int list_is_empty(t_list *list){
